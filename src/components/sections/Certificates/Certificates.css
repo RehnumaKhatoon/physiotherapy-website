@@ -1,0 +1,115 @@
+.certificates {
+  padding-top: 0;
+}
+
+.certificates__header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 40px;
+  text-align: center;
+}
+
+.certificates__slider {
+  overflow: hidden;
+  padding: 10px 0;
+  /* Fade the cards out at both edges */
+  mask-image: linear-gradient(to right, transparent, #000 8%, #000 92%, transparent);
+}
+
+.certificates__track {
+  display: flex;
+  gap: 20px;
+  width: max-content;
+  padding-right: 20px;
+  animation: certificates-scroll 50s linear infinite;
+}
+
+/* Pause so visitors can read a card */
+.certificates__slider:hover .certificates__track {
+  animation-play-state: paused;
+}
+
+.certificate {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 14px;
+  width: 260px;
+  padding: 24px;
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  background: var(--sage-50);
+  transition: transform var(--transition), box-shadow var(--transition);
+}
+
+.certificate:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow);
+}
+
+.certificate__icon {
+  display: grid;
+  place-items: center;
+  width: 52px;
+  height: 52px;
+  border-radius: var(--radius-sm);
+  background: var(--sage-100);
+  color: var(--green-800);
+}
+
+.certificate__image {
+  width: 100%;
+  aspect-ratio: 4 / 3;
+  object-fit: cover;
+  border-radius: var(--radius-sm);
+}
+
+.certificate h3 {
+  flex: 1;
+  font-size: 1rem;
+  font-weight: 600;
+  line-height: 1.35;
+}
+
+.certificate__detail {
+  padding: 3px 10px;
+  border-radius: 6px;
+  background: var(--white);
+  font-size: 0.75rem;
+  font-weight: 600;
+  color: var(--text-muted);
+}
+
+/* Awards stand out in dark green */
+.certificate--award {
+  border-color: var(--green-800);
+  background: var(--green-800);
+  color: var(--white);
+}
+
+.certificate--award .certificate__icon {
+  background: var(--sage-500);
+  color: var(--green-900);
+}
+
+.certificate--award .certificate__detail {
+  background: rgba(255, 255, 255, 0.12);
+  color: var(--sage-400);
+}
+
+@keyframes certificates-scroll {
+  to {
+    transform: translateX(-50%);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .certificates__slider {
+    overflow-x: auto;
+  }
+  .certificates__track {
+    animation: none;
+  }
+}

@@ -1,0 +1,81 @@
+.about {
+  padding-top: 40px;
+}
+
+.about__grid {
+  display: grid;
+  grid-template-columns: 1fr 1.15fr;
+  align-items: center;
+  gap: 70px;
+}
+
+.about__media {
+  position: relative;
+}
+
+.about__media img {
+  width: 100%;
+  aspect-ratio: 9 / 8;
+  object-fit: cover;
+  border-radius: var(--radius-lg);
+}
+
+.about__badge {
+  position: absolute;
+  left: 24px;
+  bottom: 24px;
+  display: flex;
+  flex-direction: column;
+  padding: 18px 22px;
+  border-radius: var(--radius);
+  background: var(--green-800);
+  color: var(--white);
+  text-align: center;
+}
+
+.about__badge strong {
+  font-size: 2.2rem;
+  line-height: 1;
+}
+
+.about__badge span {
+  margin-top: 6px;
+  max-width: 110px;
+  font-size: 0.75rem;
+  opacity: 0.8;
+}
+
+.about__content {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 22px;
+}
+
+.about__points {
+  display: grid;
+  gap: 10px;
+}
+
+.about__points li {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-weight: 500;
+}
+
+.about__points svg {
+  padding: 3px;
+  width: 22px;
+  height: 22px;
+  border-radius: 50%;
+  background: var(--sage-100);
+  color: var(--green-800);
+}
+
+@media (max-width: 860px) {
+  .about__grid {
+    grid-template-columns: 1fr;
+    gap: 40px;
+  }
+}

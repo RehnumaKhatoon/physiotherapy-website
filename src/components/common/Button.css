@@ -1,0 +1,49 @@
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  padding: 6px 6px 6px 18px;
+  border-radius: var(--radius-sm);
+  font-size: 0.9rem;
+  font-weight: 600;
+  transition: background var(--transition), transform var(--transition);
+}
+
+.btn:hover {
+  transform: translateY(-2px);
+}
+
+.btn--dark {
+  background: var(--green-800);
+  color: var(--white);
+}
+
+.btn--dark:hover {
+  background: var(--green-700);
+}
+
+.btn--light {
+  background: var(--sage-100);
+  color: var(--green-800);
+}
+
+.btn__arrow {
+  display: grid;
+  place-items: center;
+  width: 30px;
+  height: 30px;
+  border-radius: 6px;
+  background: var(--sage-500);
+  color: var(--green-900);
+  transition: transform var(--transition);
+}
+
+.btn:hover .btn__arrow {
+  transform: rotate(45deg);
+}
+
+/* Button without arrow gets symmetrical padding */
+.btn:not(:has(.btn__arrow)) {
+  padding: 12px 22px;
+}
